@@ -1,0 +1,28 @@
+program penjumlahan;
+uses crt;
+var
+n, i, jumlah , j: integer;
+
+begin
+    
+    clrscr;
+    write ('n : '); readln(n);
+    writeln ('');
+
+    for i:= n downto 1 do 
+        begin
+            jumlah := 0;
+
+        for j := 1 to i do
+        begin
+            write (j);
+            if j < i then
+            write ('+');
+            jumlah := jumlah + j;
+        end;  
+
+        writeln ('=', jumlah);
+        end;  
+        writeln ('');
+end.
+
