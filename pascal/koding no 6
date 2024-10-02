@@ -1,0 +1,72 @@
+program menu2;
+uses crt;
+var
+kode, makanan, pesan, Keputusan : string;
+harga_makanan, harga_total, harga_akhir : longint;
+porsi : integer;
+i : longint;
+
+
+begin
+    clrscr;
+    i := 0;
+    repeat
+
+     writeln ('');
+     writeln ('         kamu mau makan apa hari ini          ');
+     writeln ('');
+     writeln ('             1. nasi goreng                   ');
+     writeln ('             2. sate ayam                     ');
+     writeln ('             3. soto betawi                   ');
+     writeln ('             4. mie ayam bakso                ');
+     writeln ('             5. teh manis dingin              ');
+     writeln ('');
+
+     write ('masukkan kode menu : '); readln (kode);
+     writeln('');
+     write ('anda ingin berapa porsi : ');readln(porsi);
+
+     case (kode) of
+        '1' : makanan := 'nasi goreng';
+        '2' : makanan := 'sate ayam';
+        '3' : makanan := 'soto betawi';
+        '4' : makanan := ' mie ayam bakso';
+        '5' : makanan := 'teh manis dingin';
+
+    else
+    begin
+    writeln ('tidak ada');
+    end;
+    end;
+
+    case (kode) of
+        '1' : harga_makanan := 10000;
+        '2'   : harga_makanan := 7000;
+        '3'   : harga_makanan := 7000;
+        '4'   : harga_makanan := 7000;
+        '5'   : harga_makanan := 7000;
+
+    else
+    begin
+    writeln ('tidak ada');
+    end;
+    end;
+
+    harga_total := harga_makanan * porsi;
+    i := harga_total + i;
+    writeln ('');
+    writeln ('              TOTAL HARGA PESANAN : Rp',i);
+    writeln ('');
+    write ('apakah ada pesanan tambahan (iya/tidak) : ');readln(pesan);
+    
+    until(pesan = 'tidak') or (pesan = 'Tidak');
+
+    writeln ('');
+    writeln ('              ANDA HARUS MEMBAYAR : Rp',i);
+    writeln ('');
+    writeln ('              TERIMA KASIH SILAHKAN TUNGGU PESANAN ANDA DATANG');
+    writeln ('');
+end.
+    
+
+
